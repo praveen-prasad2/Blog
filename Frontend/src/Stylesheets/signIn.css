@@ -1,0 +1,14 @@
+#container{
+    width: 400px;
+    height: 400px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.head{
+    color: red;
+}

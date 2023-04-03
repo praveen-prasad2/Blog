@@ -1,0 +1,18 @@
+#wrap{
+    width: 500px;
+    height: auto;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.head{
+    color: red;
+}
+
+#btn{
+    margin-bottom: 20px;
+}
