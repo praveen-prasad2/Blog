@@ -1,17 +1,24 @@
 import React from 'react'
-import { useRef } from 'react'
+import { useRef,useContext } from 'react'
+import { UserContext } from './Context/UserContext'
+
 import { signIn } from '../API/Api'
 import axios from 'axios'
 import { TextField,Box,Button } from '@mui/material'
 import '../Stylesheets/signin.css'
+import { useNavigate } from 'react-router-dom'
 
 
 function Signin() {
     const emailRef=useRef()
     const passRef=useRef()
+    const navigate=useNavigate()
+
+    const {SetloggedinUser}=useContext(UserContext)
     
 
     async function userLogin(){
+
         let user={
             email:emailRef.current.value,
             password:passRef.current.value
@@ -20,7 +27,8 @@ function Signin() {
         console.log(response.data);
 
         if(response.data.success==true){
-            alert("Login Success")
+            SetloggedinUser(response.data.user)
+            navigate("/authorblog")
         }else{
             alert("Login Error")
         }

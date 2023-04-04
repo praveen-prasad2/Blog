@@ -1,3 +1,4 @@
+
 const SampleModel =require("../Models/samplemodel")
 const bcrypt = require('bcrypt')
 
@@ -31,7 +32,8 @@ const getUser=async(req,res)=>{
 
                 res.json({
                     success:true,
-                    message:"success"
+                    message:"success",
+                    user
                 })
             }else{
                 res.json({
