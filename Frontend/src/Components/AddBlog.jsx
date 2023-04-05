@@ -31,7 +31,7 @@ function AddBlog() {
         let response=await axios.post(addBlog,blog)
         console.log(response);
         if(response.data.success=true){
-            alert("blog posted succcessfully")
+            navigate('/allblogs')
         }else{
             alert("try again")
         }

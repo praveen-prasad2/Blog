@@ -10,6 +10,7 @@ import AuthorBlog from "./Components/Author Blog/AuthorBlog";
 import UserProvider from "./Components/Context/UserContext";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import UserRoute from "./Components/Private Route/UserRoute";
+import EditBlog from "./Components/Author Blog/EditBlog";
 
 function App() {
  
@@ -23,7 +24,8 @@ function App() {
        <Route path="login" element={<Signin />} />
       <Route path="addblog" element={<UserRoute><AddBlog /></UserRoute>} /> 
        <Route path="allblogs" element={<AllBlogs />} />
-       <Route path="authorblog" element={<AuthorBlog />} />
+       <Route path="authorblog" element={<UserRoute><AuthorBlog /></UserRoute>} />
+       <Route path="editblog" element={<UserRoute><EditBlog /></UserRoute>} />
     </Routes>
     </BrowserRouter>
 

@@ -67,6 +67,20 @@ const deleteBlog=async(req,res)=>{
     }
 }
 
+const editBlog=async(req,res)=>{
+    let edit=await BlogModel.findOneAndUpdate({_id:req.params.id},req.body)
+    try{
+        res.json({
+            success:true,
+            message:"edited successfully"
+        })
+    }catch(error){
+        res.json({
+            success:false,
+            message:"failed to edit"
+        })
+    }
+}
 
 
-module.exports={addBlog,allBlog,getOneBlog,deleteBlog}
+module.exports={addBlog,allBlog,getOneBlog,deleteBlog,editBlog}
