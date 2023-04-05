@@ -28,6 +28,7 @@ function Signin() {
 
         if(response.data.success==true){
             SetloggedinUser(response.data.user)
+            localStorage.setItem('loggedinuser',JSON.stringify(response.data.user))
             navigate("/authorblog")
         }else{
             alert("Login Error")

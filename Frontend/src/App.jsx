@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Signin from "./Components/Signin";
 import Signup from "./Components/Signup";
@@ -13,7 +11,8 @@ import UserRoute from "./Components/Private Route/UserRoute";
 import EditBlog from "./Components/Author Blog/EditBlog";
 
 function App() {
- 
+
+
 
   return (
     <UserProvider>
