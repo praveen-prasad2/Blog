@@ -7,12 +7,15 @@
     justify-content: center;
     align-items: center;
     border-radius: 50px 0 50px 0;
+    margin-top: 150px;
+    margin-left: 500px;
 }
 #wrap:hover{
     border-radius: 0 50px 0 50px;
 }
 .head{
-    color: red;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #btn{

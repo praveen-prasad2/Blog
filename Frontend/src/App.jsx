@@ -9,6 +9,7 @@ import UserProvider from "./Components/Context/UserContext";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import UserRoute from "./Components/Private Route/UserRoute";
 import EditBlog from "./Components/Author Blog/EditBlog";
+import LandingPage from "./Components/LandingPage";
 
 function App() {
 
@@ -19,10 +20,11 @@ function App() {
 
     <BrowserRouter>
     <Routes>
-      <Route path="" element={<Signup />} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="signup" element={<Signup />} />  
        <Route path="login" element={<Signin />} />
       <Route path="addblog" element={<UserRoute><AddBlog /></UserRoute>} /> 
-       <Route path="allblogs" element={<AllBlogs />} />
+       {/* <Route path="allblogs" element={<AllBlogs />} /> */}
        <Route path="authorblog" element={<UserRoute><AuthorBlog /></UserRoute>} />
        <Route path="editblog" element={<UserRoute><EditBlog /></UserRoute>} />
     </Routes>

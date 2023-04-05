@@ -5,6 +5,8 @@ import axios from 'axios'
 import { TextField,Box,Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import '../Stylesheets/signup.css'
+import Navbar from './Navbar'
+import Footer from './Footer/Footer'
 
 
 
@@ -35,6 +37,8 @@ async function userSignup(){
     }
   }
   return (
+    <>
+    <Navbar/>
     <Box id="wrap">
     <h1 className='head'>SIGNUP</h1>
    <TextField id="standard-basic" label="Full Name" variant="standard" type="text" inputRef={usernameRef}/><br /><br />
@@ -44,6 +48,8 @@ async function userSignup(){
    <TextField id="standard-basic" label="Re-enter Password" variant="standard" type="password" inputRef={pass2Ref}/><br /><br />
    <Button variant="outlined" id='btn' onClick={userSignup}>SignUp</Button>
   </Box>
+  <Footer/>
+  </>
   )
 }
 
