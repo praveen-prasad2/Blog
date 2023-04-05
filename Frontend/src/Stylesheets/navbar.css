@@ -13,6 +13,10 @@
     color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.head img{
+    width:40px;
+}
 .options{
     text-decoration: none;
     display: flex ;

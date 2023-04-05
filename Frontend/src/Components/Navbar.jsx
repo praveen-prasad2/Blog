@@ -1,20 +1,26 @@
 import React from 'react'
 import "../Stylesheets/navbar.css"
 import { Link } from '@mui/material'
+import { useContext } from 'react'
+import { UserContext } from './Context/UserContext'
+import Signout from './Signout'
 
 function Navbar() {
+
+  const {loggedinUser}=useContext(UserContext)
+
   return (
     <>
     <div className="navbar">
 <div className="head">
-      <h1>BLOG</h1>
+      <h1><img src="/images/titleicon.png" alt="" /> BLOG</h1>
       </div>
   <div className="options">
     <a href="/">Home</a>
     <a href="#">About</a>
     <a href="#">Resources</a>
     <a href="#contact">Contact</a>
-    <button className='login'><a href="/login">Signin</a> </button>
+    {loggedinUser ?<Signout />:<button className='login'><a href="/login">Signin</a> </button>}
   </div>
 </div>
     </>

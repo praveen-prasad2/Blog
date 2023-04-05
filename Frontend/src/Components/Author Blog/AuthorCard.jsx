@@ -4,6 +4,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import { deleteBlog } from '../../API/Api';
 import { useNavigate } from 'react-router-dom';
+import "./authorcard.css"
+import Navbar from '../Navbar';
+import Footer from '../Footer/Footer';
 
 function AuthorCard({authormap}) {
 
@@ -21,7 +24,8 @@ function AuthorCard({authormap}) {
 
   return (
     <>
-    <div className="card">
+    <Navbar/>
+    <div className="authcard">
         <div className="heading">
         <h1>{authormap.title}</h1>
         </div>
@@ -29,6 +33,7 @@ function AuthorCard({authormap}) {
 <p>{authormap.content}</p>
 <p>{authormap.authorname}</p>
 <p>{authormap.dateposted}</p>
+<hr />
 <div className="buttons">
 <EditIcon onClick={blogEdit}/>
 <DeleteIcon onClick={blogDelete} />
@@ -36,6 +41,7 @@ function AuthorCard({authormap}) {
 </div>
     </div>
     </div>
+    
     </>
   )
 }

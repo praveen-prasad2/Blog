@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { oneBlog } from '../../API/Api'
 import { UserContext } from '../Context/UserContext'
 import AuthorCard from './AuthorCard'
+import Footer from '../Footer/Footer'
 
 
 function authorBlog() {
@@ -23,6 +24,7 @@ function authorBlog() {
 <AuthorCard authormap={ablog}/>
     )
   })}
+  <Footer />
   </>
   )
 }
