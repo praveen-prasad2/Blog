@@ -4,8 +4,8 @@
     display: flex;
     flex-direction: row;
     background-color: aliceblue;
-    margin-top: 50px;
-    
+    margin-top: 100px;
+    margin-left: 50px;
     border-radius: 20px;
     padding-bottom: 20px;
 }
@@ -16,7 +16,7 @@
 .card{
     display: flex;
     flex-direction: column;
-    ;
+    
 }
 
 .heading{
@@ -59,11 +59,11 @@
 }
 
 #content:hover{
-    color: rgb(5, 120, 208);
+    color: #645bff;
 }
 
 .like:hover{
-    color: rgb(5, 120, 208);
+    color: #645bff;
 }
 
 .dislike:hover{

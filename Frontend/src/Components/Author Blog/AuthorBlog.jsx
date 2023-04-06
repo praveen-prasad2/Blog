@@ -4,6 +4,9 @@ import { oneBlog } from '../../API/Api'
 import { UserContext } from '../Context/UserContext'
 import AuthorCard from './AuthorCard'
 import Footer from '../Footer/Footer'
+import { Link } from 'react-router-dom'
+import AddIcon from '@mui/icons-material/Add';
+import "./authorblog.css"
 
 
 function authorBlog() {
@@ -24,7 +27,10 @@ function authorBlog() {
 <AuthorCard authormap={ablog}/>
     )
   })}
+  <Link to="/addblog"><button className="postblog">New Blog<AddIcon /></button></Link>
   <Footer />
+
+
   </>
   )
 }

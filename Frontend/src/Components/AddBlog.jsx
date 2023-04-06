@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom'
 import { UserContext } from './Context/UserContext'
 import "../Stylesheets/addblog.css"
 import axios from 'axios'
+import Navbar from './Navbar'
+import Footer from './Footer/Footer'
+import PersonIcon from '@mui/icons-material/Person';
+
 
 
 
@@ -31,22 +35,25 @@ function AddBlog() {
         let response=await axios.post(addBlog,blog)
         console.log(response);
         if(response.data.success=true){
-            navigate('/allblogs')
+            navigate('/authorblog')
         }else{
             alert("try again")
         }
     }
   return (
-    
+    <>
+    <Navbar/>
     <Box id="card">
         <Box>
-    <h1>Post Your Ideas</h1>
-    <p>{loggedinUser.username}</p>  
-    <TextField id="outlined-textarea" label="Title" placeholder="Placeholder" inputRef={titleref}/> <br /><br />
+    <h1>POST YOUR IDEAS</h1>
+    <p ><PersonIcon/> {loggedinUser.username}</p>  
+    <TextField id="outlined-textarea" label="Title"  inputRef={titleref}/> <br /><br />
     <TextField id="outlined-multiline-static" label="Content" multiline rows={4} inputRef={contentref}/> <br /><br />
-    <Button variant="outlined" onClick={saveBlog}>Save</Button>
+    <Button variant="outlined" className='saveblog' onClick={saveBlog} >Save</Button>
         </Box>
     </Box>
+    <Footer/>
+    </>
 
 
   )

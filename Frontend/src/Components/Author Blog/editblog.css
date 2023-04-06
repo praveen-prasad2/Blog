@@ -1,0 +1,12 @@
+.editcard{
+    background-color: aliceblue;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    margin-left: 500px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}

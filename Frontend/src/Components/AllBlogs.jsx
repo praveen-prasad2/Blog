@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { allBlog } from '../API/Api'
 import Card from './Card'
 import axios from 'axios'
+import Navbar from './Navbar'
+import Footer from './Footer/Footer'
 
 function AllBlogs() {
     const [allBlogs,setallBlogs]=useState()
@@ -14,11 +16,13 @@ function AllBlogs() {
     useEffect(()=>{getallBlog()},[])
   return (
     <>
+    
     {allBlogs && allBlogs.map((bg)=>{
         return(
             <Card blogmap={bg}/>
         )
     })}
+ 
     </>
   )
 }
