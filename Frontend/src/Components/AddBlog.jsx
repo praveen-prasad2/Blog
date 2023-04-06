@@ -1,5 +1,5 @@
-import React, { useRef ,useContext} from 'react'
-import { TextField,Button,Box } from '@mui/material'
+import React, { useRef ,useContext, useState} from 'react'
+import { TextField,Button,Box, Snackbar, Alert } from '@mui/material'
 import { addBlog } from '../API/Api'
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from './Context/UserContext'
@@ -12,6 +12,7 @@ import PersonIcon from '@mui/icons-material/Person';
 
 
 
+
 function AddBlog() {
 
     let titleref=useRef()
@@ -19,9 +20,16 @@ function AddBlog() {
 
     const navigate=useNavigate()
 
+    const [open,setopen]=useState()
+
 
 
     const {loggedinUser}=useContext(UserContext)
+
+
+    function handleClose(){
+        setopen(false)
+    }
 
     async function saveBlog(){
         let blog={
@@ -35,7 +43,11 @@ function AddBlog() {
         let response=await axios.post(addBlog,blog)
         console.log(response);
         if(response.data.success=true){
-            navigate('/authorblog')
+            setopen(true)
+            setTimeout(()=>{
+
+                navigate('/authorblog')
+            },1000)
         }else{
             alert("try again")
         }
@@ -50,6 +62,14 @@ function AddBlog() {
     <TextField id="outlined-textarea" label="Title"  inputRef={titleref}/> <br /><br />
     <TextField id="outlined-multiline-static" label="Content" multiline rows={4} inputRef={contentref}/> <br /><br />
     <Button variant="outlined" className='saveblog' onClick={saveBlog} >Save</Button>
+    <Snackbar open={open}
+            autoHideDuration={6000}
+            onClose={handleClose}
+            >
+           <Alert onClose={handleClose} autoHideDuration={5000} severity="success" sx={{ width: '100%' }}>
+          Blog Added Successfully
+        </Alert>
+          </Snackbar>
         </Box>
     </Box>
     <Footer/>
