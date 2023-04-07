@@ -1,17 +1,21 @@
-import React, { useState } from 'react'
-import "../Stylesheets/navbar.css"
-import { Link } from '@mui/material'
-import { useContext } from 'react'
-import { UserContext } from './Context/UserContext'
-import Signout from './Signout'
-import {CircularProgress,Backdrop} from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import React, { useRef, useState } from "react";
+import "../Stylesheets/navbar.css";
+import { Link } from "@mui/material";
+import { useContext } from "react";
+import { UserContext } from "./Context/UserContext";
+import Signout from "./Signout";
+import { CircularProgress, Backdrop } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
+import { FormControl } from "@mui/material";
+import { InputLabel } from "@mui/material";
+import { Select } from "@mui/material";
+import { MenuItem } from "@mui/material";
+import axios from "axios";
+import { sortBlog } from "../API/Api";
 
 function Navbar() {
-
-
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   //Try
 
   const [open, setOpen] = useState(false);
@@ -20,46 +24,85 @@ function Navbar() {
   };
   const handleToggle = () => {
     setOpen(true);
-    setTimeout(()=>{
-      navigate('/login')
-      handleClose()
-    },1000)
+    setTimeout(() => {
+      navigate("/login");
+      handleClose();
+    }, 1000);
   };
 
   //
 
-  const {loggedinUser}=useContext(UserContext)
+  const { loggedinUser } = useContext(UserContext);
+
+  async function sorting(e) {
+    navigate('/sortblogs',{state:e.target.value})
+  }
 
   return (
     <>
-    <div className="navbar">
-<div className="head">
-      <h1><img src="/images/titleicon.png" alt="" /> BLOG</h1>
+      <div className="navbar">
+        <div className="head">
+          <h1>
+            <img src="/images/titleicon.png" alt="" /> BLOG
+          </h1>
+        </div>
+        <div className="options">
+          <a href="/">Home</a>
+          <a href="#">About</a>
+          <a href="#">Resources</a>
+          {loggedinUser ? (
+            <a href="/authorblog">Your Posts</a>
+          ) : (
+            <a href="/login">Your Posts</a>
+          )}{" "}
+          <br />
+          <br />
+          <a href="#contact">Contact</a>
+          <div>
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+              <InputLabel id="demo-simple-select-helper-label">
+                Category
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-helper-label"
+                id="demo-simple-select-helper"
+                label="category"
+                onChange={sorting}
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+
+                <MenuItem value="HTML-CSS">HTML/CSS</MenuItem>
+                <MenuItem value="React">React</MenuItem>
+                <MenuItem value="NodeJS">NodeJS</MenuItem>
+                <MenuItem value="MongoDB">MongoDB</MenuItem>
+              </Select>
+            </FormControl>
+          </div>
+          {loggedinUser ? (
+            <Signout />
+          ) : (
+            <button className="login" onClick={handleToggle}>
+              Signin{" "}
+            </button>
+          )}
+        </div>
       </div>
-  <div className="options">
-    <a href="/">Home</a>
-    <a href="#">About</a>
-    <a href="#">Resources</a>
-    {loggedinUser ?<a href="/authorblog">Your Posts</a>:<a href="/login">Your Posts</a> } <br /><br />
-    <a href="#contact">Contact</a>
-    
-    {loggedinUser ?<Signout />:<button className='login' onClick={handleToggle}>Signin </button>}
-  </div>
-</div>
-{/* try */}
+      {/* try */}
 
-<div>
-      <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={open}
-      >
-        <CircularProgress color="inherit" />
-      </Backdrop>
-    </div>
+      <div>
+        <Backdrop
+          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={open}
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
+      </div>
 
-{/*  */}
+      {/*  */}
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

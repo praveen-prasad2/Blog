@@ -16,6 +16,7 @@
 .card{
     display: flex;
     flex-direction: column;
+    width: 1000px;
     
 }
 
@@ -52,10 +53,18 @@
     size: 50px;
 }
 
+.content{
+    width: 100%;
+    overflow-wrap: break-word;
+}
 #content{
+    width: 100% !important;
     font-size: 15px;
     color: black;
     margin-bottom: 50px;
+    font-family: 'Schibsted Grotesk', sans-serif;
+    text-align: center;
+  
 }
 
 #content:hover{

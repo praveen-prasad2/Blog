@@ -17,14 +17,14 @@ function Footer() {
     <p>8589920409</p>
     <p>praveenprasad2510@gmail.com</p>
     <div className="social">
-<Link to="https://www.instagram.com/uglymallu/"><InstagramIcon className="footicon" /></Link>
-<Link to="https://github.com/praveen-prasad2"><GitHubIcon className="footicon"/></Link>
-<Link to="https://twitter.com/uglymallu"><TwitterIcon className="footicon"/></Link>
+<Link to="https://www.instagram.com/uglymallu/"><InstagramIcon className="footicon insta" /></Link>
+<Link to="https://github.com/praveen-prasad2"><GitHubIcon className="footicon github"/></Link>
+<Link to="https://twitter.com/uglymallu"><TwitterIcon className="footicon twitter"/></Link>
     </div>
 <span><CopyrightIcon /> 2023 by Praveen Prasad</span>
 </div>
 
-
+<div className="line"></div>
 
         <div className="rightc">
       <div className="heads">

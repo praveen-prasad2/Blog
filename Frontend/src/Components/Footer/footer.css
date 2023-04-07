@@ -30,3 +30,23 @@
 .leftc .social .footicon{
     color:black;
 }
+
+.leftc h1{
+    color: black;
+    font-weight: 100;
+}
+
+.heads h1{
+    color: black;
+
+    font-weight: 100;
+}
+
+.social .footicon:hover{
+    color: #1DA1F2;
+}
+
+.line{
+    border: solid   0.1px black;
+    height: 300px;
+}

@@ -10,6 +10,7 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 import UserRoute from "./Components/Private Route/UserRoute";
 import EditBlog from "./Components/Author Blog/EditBlog";
 import LandingPage from "./Components/LandingPage";
+import SortedBlog from "./Components/SortedBlog";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
        {/* <Route path="allblogs" element={<AllBlogs />} /> */}
        <Route path="authorblog" element={<UserRoute><AuthorBlog /></UserRoute>} />
        <Route path="editblog" element={<UserRoute><EditBlog /></UserRoute>} />
+       <Route path="sortblogs" element={<SortedBlog />} />
     </Routes>
     </BrowserRouter>
 

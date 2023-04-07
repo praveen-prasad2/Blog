@@ -1,3 +1,5 @@
+/* @import url('https://fonts.googleapis.com'); */
+
 .navbar{
     background-color: rgb(205, 212, 218);
     width: 100%;
@@ -20,11 +22,12 @@
 .options{
     text-decoration: none;
     display: flex ;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 500;
     color: black;
     justify-content: center;
     align-items: center;
+    font-size: 14px;
 }
 .options a{
     text-decoration: none;

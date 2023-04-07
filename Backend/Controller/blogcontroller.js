@@ -68,7 +68,7 @@ const deleteBlog=async(req,res)=>{
 }
 
 const editBlog=async(req,res)=>{
-    let edit=await BlogModel.findOneAndUpdate({_id:req.params.id},req.body)
+    let edit=await BlogModel.findOneAndUpdate({_id:req.params.id})
     try{
         res.json({
             success:true,
@@ -82,5 +82,22 @@ const editBlog=async(req,res)=>{
     }
 }
 
+const sortBlogs=async(req,res)=>{
+    let sort=await BlogModel.find({category:req.params.category})
+    try {
+        res.json({
+            success:true,
+            message:"successfully sorted",
+            sort
+        })
+        console.log(sort);
+    } catch (error) {
+        res.json({
+            success:false,
+            message:"sorry can't sort "
+        })
+    }
+}
 
-module.exports={addBlog,allBlog,getOneBlog,deleteBlog,editBlog}
+
+module.exports={addBlog,allBlog,getOneBlog,deleteBlog,editBlog,sortBlogs}
