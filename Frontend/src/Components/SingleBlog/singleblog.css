@@ -1,0 +1,39 @@
+.mainsingle{
+    margin-left: 300px;
+    margin-top: 150px;
+    width: 1000px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding-bottom: 20px;
+}
+
+.addcomment{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: antiquewhite;
+    margin-top: 50px;
+}
+
+.addcomment h1{
+    color: blueviolet;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.addcomment .postcomment{
+    width: 150px;
+    color: white;
+    background-color: #645bff;;
+    border: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.addcomment .postcomment:hover{
+    background-color: white;
+    color: #645bff;
+    border: none;
+}

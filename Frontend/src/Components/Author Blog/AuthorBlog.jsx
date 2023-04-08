@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { oneBlog } from "../../API/Api";
+import { blogsofAuthor } from "../../API/Api";
 import { UserContext } from "../Context/UserContext";
 import AuthorCard from "./AuthorCard";
 import Footer from "../Footer/Footer";
@@ -14,9 +14,9 @@ function authorBlog() {
   const { loggedinUser } = useContext(UserContext);
 
   async function getAuthorBlog() {
-    let blogofauthor = await axios.get(oneBlog + loggedinUser._id);
-    setauthorblog(blogofauthor.data.blogs);
+    let blogofauthor = await axios.get(blogsofAuthor + loggedinUser._id);
     console.log(blogofauthor);
+    setauthorblog(blogofauthor.data.authorblog);
   }
   useEffect(() => {
     getAuthorBlog();

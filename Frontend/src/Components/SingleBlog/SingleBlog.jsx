@@ -13,6 +13,7 @@ import Comments from './Comments';
 import { Button, TextField } from '@mui/material';
 import { useContext } from 'react';
 import { UserContext } from '../Context/UserContext';
+import "./singleblog.css"
 
 
 
@@ -78,7 +79,7 @@ useEffect(()=>{
   return (
     <>
     <Navbar/>
-    <div className="main">
+    <div className="mainsingle">
       <div className="card">
         <p className="author">
           <AccountCircleIcon className="accounticon" /> {oneblog.authorname}{" "}
@@ -102,14 +103,16 @@ useEffect(()=>{
       </div>
     </div>
     <div className="addcomment">
-        <h1>Add Your comments here</h1>
+        <h1>ADD YOUR COMMENTS HERE</h1>
       <TextField
           id="standard-multiline-flexible"
           label="Write your comment"
           multiline
           maxRows={4}
+          size='big'
           variant="standard"
           inputRef={commentref}
+          style = {{width: 500}}
         />
            <Button variant="outlined" className="postcomment" onClick={addYourComment} >
               Post

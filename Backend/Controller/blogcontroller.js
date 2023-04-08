@@ -50,6 +50,8 @@ const getOneBlog = async (req,res)=>{
             success:false,
             message:"sorry it's an error"
         })
+
+        console.log(error);
     }
 }
 const deleteBlog=async(req,res)=>{
@@ -100,4 +102,20 @@ const sortBlogs=async(req,res)=>{
 }
 
 
-module.exports={addBlog,allBlog,getOneBlog,deleteBlog,editBlog,sortBlogs}
+const getAuthorBlog=async (req,res)=>{
+    try{
+        let authorblog=await BlogModel.find({authorid:req.params.id})
+        res.json({
+            success:true,
+            message:"got all your blogs",
+            authorblog
+        })
+    }catch(error){
+        res.json({
+            success:false,
+            message:"sorry it's an error"
+        })
+    }
+}
+
+module.exports={addBlog,allBlog,getOneBlog,deleteBlog,editBlog,sortBlogs,getAuthorBlog}
