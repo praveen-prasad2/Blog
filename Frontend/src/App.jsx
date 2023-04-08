@@ -11,6 +11,7 @@ import UserRoute from "./Components/Private Route/UserRoute";
 import EditBlog from "./Components/Author Blog/EditBlog";
 import LandingPage from "./Components/LandingPage";
 import SortedBlog from "./Components/SortedBlog";
+import SingleBlog from "./Components/SingleBlog/SingleBlog";
 
 function App() {
 
@@ -28,7 +29,8 @@ function App() {
        {/* <Route path="allblogs" element={<AllBlogs />} /> */}
        <Route path="authorblog" element={<UserRoute><AuthorBlog /></UserRoute>} />
        <Route path="editblog" element={<UserRoute><EditBlog /></UserRoute>} />
-       <Route path="sortblogs" element={<SortedBlog />} />
+       <Route path="sortblogs/:category" element={<SortedBlog />} />
+       <Route path="singleblog/:id" element={<SingleBlog/>} />
     </Routes>
     </BrowserRouter>
 

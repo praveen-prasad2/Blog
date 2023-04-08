@@ -5,6 +5,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import CommentIcon from "@mui/icons-material/Comment";
 import "../Stylesheets/card.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Link } from "react-router-dom";
 
 function Card({ blogmap }) {
   return (
@@ -21,7 +22,7 @@ function Card({ blogmap }) {
             <p>{blogmap.category}</p>
           </div>
           <div className="content">
-            <p id="content">{blogmap.content}</p>
+            <p id="content">{blogmap.content} <Link to={`/singleblog/${blogmap._id}`}>Read More...</Link></p>
             <hr />
             <div className="buttons">
               <ThumbUpIcon className="like" />

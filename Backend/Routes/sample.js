@@ -3,6 +3,7 @@ const  router=express.Router()
 
 const {addUser, getUser}=require("../Controller/samplecontroller")
 const { addBlog, allBlog, getOneBlog, deleteBlog, editBlog, sortBlogs } = require("../Controller/blogcontroller")
+const { addComment, blogComments } = require("../Controller/commentcontroller")
 
 router.post("/user",addUser)//signup
 router.post("/login",getUser)
@@ -12,5 +13,9 @@ router.get('/blogs/:id',getOneBlog)
 router.delete('/deleteblog/:id',deleteBlog)
 router.patch('/editblog/:id',editBlog)
 router.get('/sortblog/:category',sortBlogs)
+
+router.post('/addcomment',addComment)
+router.get('/blogcomments/:id',blogComments)
+
 
 module.exports=router

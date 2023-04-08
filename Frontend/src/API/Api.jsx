@@ -6,3 +6,7 @@ export const oneBlog="http://localhost:5000/blogs/"
 export const deleteBlog="http://localhost:5000/deleteblog/"
 export const editBlog="http://localhost:5000/editblog/"
 export const sortBlog="http://localhost:5000/sortblog/"
+
+
+export const addComment="http://localhost:5000/addcomment"
+export const blogComments="http://localhost:5000/blogcomments/"

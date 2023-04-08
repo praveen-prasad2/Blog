@@ -1,25 +1,26 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { sortBlog } from '../API/Api';
 import Navbar from './Navbar';
 import Footer from './Footer/Footer';
+import "../Stylesheets/sortedblog.css"
 
 function SortedBlog() {
-    const location=useLocation()
+    const {category} = useParams()
 
     const[categories,setCategories]=useState([])
 
     async function getCategoryBlogs(){
         console.log(location.state);
-        let response=await axios.get(sortBlog+location.state)
+        let response=await axios.get(sortBlog+category)
         console.log(response);
         setCategories(response.data.sort)
     }
     useEffect(()=>{
         getCategoryBlogs()
         console.log(categories);
-    },[])
+    },[category])
   return (
     <>
 
@@ -31,7 +32,8 @@ function SortedBlog() {
                 <div className="sortedcard">
                     <p className="coma">{c.authorname}</p>
                     <p>{c.dateposted}</p>
-                    <h1 className="cathead">{c.category}</h1>
+                    <h1 className="titlecat">{c.title}</h1>
+                    <p className="cathead">{c.category}</p>
                 </div>
                 <div className="bottom">
                 <p>{c.title}</p>

@@ -1,4 +1,5 @@
 const mongoose =require ('mongoose')
+
 const blogSchema=new mongoose.Schema({
     title:{type:String,maxLength:50},
     content:{type:String},

@@ -14,7 +14,7 @@ const addBlog=async(req,res)=>{
     }catch(error){
         res.json({
             success:false,
-            message:"Task adding unsuccessful"
+            message:"Blog adding unsuccessful"
         })
         console.log(error);
     }
@@ -39,11 +39,11 @@ const allBlog=async(req,res)=>{
 
 const getOneBlog = async (req,res)=>{
     try{
-        let blogs=await BlogModel.find({authorid:req.params.id})
+        let blog=await BlogModel.findOne({_id:req.params.id})
         res.json({
             success:true,
             message:"got your blog",
-            blogs
+            blog 
         })
     }catch(error){
         res.json({

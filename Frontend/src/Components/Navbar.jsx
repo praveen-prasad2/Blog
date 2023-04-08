@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import "../Stylesheets/navbar.css";
-import { Link } from "@mui/material";
 import { useContext } from "react";
 import { UserContext } from "./Context/UserContext";
 import Signout from "./Signout";
@@ -11,8 +10,7 @@ import { FormControl } from "@mui/material";
 import { InputLabel } from "@mui/material";
 import { Select } from "@mui/material";
 import { MenuItem } from "@mui/material";
-import axios from "axios";
-import { sortBlog } from "../API/Api";
+
 
 function Navbar() {
   const navigate = useNavigate();
@@ -33,9 +31,12 @@ function Navbar() {
   //
 
   const { loggedinUser } = useContext(UserContext);
-
+  const [select,setSelect] = useState(" ")
+  
   async function sorting(e) {
-    navigate('/sortblogs',{state:e.target.value})
+    setSelect(e.target.value)
+    navigate('/sortblogs/'+e.target.value)
+    
   }
 
   return (
@@ -68,11 +69,11 @@ function Navbar() {
                 id="demo-simple-select-helper"
                 label="category"
                 onChange={sorting}
+                value={select}
               >
                 <MenuItem value="">
                   <em>None</em>
                 </MenuItem>
-
                 <MenuItem value="HTML-CSS">HTML/CSS</MenuItem>
                 <MenuItem value="React">React</MenuItem>
                 <MenuItem value="NodeJS">NodeJS</MenuItem>
