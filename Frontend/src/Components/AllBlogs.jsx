@@ -11,7 +11,7 @@ function AllBlogs() {
     async function getallBlog(){
         let theblogs=await axios.get(allBlog)
         setallBlogs(theblogs.data.allBlog)
-        console.log(theblogs.data);
+        // console.log(theblogs.data);   
     }
     useEffect(()=>{getallBlog()},[])
   return (
@@ -23,7 +23,7 @@ function AllBlogs() {
         )
     })}
  
-    </>
+    </> 
   )
 }
 

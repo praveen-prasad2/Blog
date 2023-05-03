@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "./Context/UserContext";
 import Signout from "./Signout";
 import { CircularProgress, Backdrop } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { FormControl } from "@mui/material";
 import { InputLabel } from "@mui/material";
@@ -48,15 +48,15 @@ function Navbar() {
           </h1>
         </div>
         <div className="options">
-          <a href="/">Home</a>
-          <a href="#">About</a>
-          <a href="#">Resources</a>
+          <Link to="/">Home</Link>
+          <Link to="#">About</Link>
+          <Link to="#">Resources</Link>
           {loggedinUser ? (
-            <a href="/authorblog">Your Posts</a>) : (
-            <a href="/login">Your Posts</a>)}{" "}
+            <Link to="/authorblog">Your Posts</Link>) : (
+            <Link to="/login">Your Posts</Link>)}{" "}
           <br />
           <br />
-          <a href="#contact">Contact</a>
+          <Link to="#contact">Contact</Link>
           <div>
             <FormControl sx={{ m: 1, minWidth: 120 }}>
               <InputLabel id="demo-simple-select-helper-label">

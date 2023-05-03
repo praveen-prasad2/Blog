@@ -26,6 +26,7 @@ function authorBlog() {
       {authorblog &&
         authorblog.map((ablog) => {
           return <AuthorCard authormap={ablog} />;
+          
         })}
       <Link to="/addblog">
         <button className="postblog">

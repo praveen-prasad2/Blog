@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import "./authorcard.css";
 import Navbar from "../Navbar";
 import Footer from "../Footer/Footer";
+
 import {
   Button,
   Dialog,

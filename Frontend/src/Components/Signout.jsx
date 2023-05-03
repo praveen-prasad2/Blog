@@ -1,7 +1,7 @@
 import React from "react";
 import { UserContext } from "./Context/UserContext";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import { Button,Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle } from '@mui/material';
@@ -38,9 +38,9 @@ function Signout() {
   return (
     <>
     <button className="login">
-      <a href="" onClick={(e)=>{handleClickOpen(e)}}>
+      <Link to="" onClick={(e)=>{handleClickOpen(e)}}>
         Signout
-      </a>{" "}
+      </Link>{" "}
     </button>
 
     <div>

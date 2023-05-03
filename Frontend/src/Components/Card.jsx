@@ -6,14 +6,23 @@ import CommentIcon from "@mui/icons-material/Comment";
 import "../Stylesheets/card.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Link } from "react-router-dom";
+import AllAuthorBlog from "./Allauthorblogs/AllAuthorBlog";
+import { useNavigate } from "react-router-dom";
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 
 function Card({ blogmap }) {
+
+  const navigate=useNavigate()
+
+   function viewAuthorBlogs(){
+   navigate("/allauthorblog",{state:{blogmap}})
+  }
   return (
     <>
       <div className="main">
         <div className="card">
           <p className="author">
-            <AccountCircleIcon className="accounticon" /> {blogmap.authorname}{" "}
+         <AccountCircleIcon className="accounticon" /> {blogmap.authorname}{" "}
             <br />
             {new Date(blogmap.dateposted).toDateString()}
           </p>
@@ -28,7 +37,7 @@ function Card({ blogmap }) {
               <ThumbUpIcon className="like" />
               <ThumbDownIcon className="dislike" />
               <CommentIcon />
-              <ShareIcon />
+              <PersonSearchIcon onClick={viewAuthorBlogs} />
             </div>
           </div>
         </div>
