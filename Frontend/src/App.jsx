@@ -30,7 +30,6 @@ function App() {
        <Route path="login" element={<Signin />} />
       <Route path="addblog" element={<UserRoute><AddBlog /></UserRoute>} /> 
    
-       {/* <Route path="allblogs" element={<AllBlogs />} /> */}
        <Route path="authorblog" element={<UserRoute><AuthorBlog /></UserRoute>} />
        <Route path="editblog" element={<UserRoute><EditBlog /></UserRoute>} />
        <Route path="sortblogs/:category" element={<SortedBlog />} />
